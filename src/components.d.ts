@@ -5,28 +5,26 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil/router";
+import { NavItem } from "@/interfaces";
 export namespace Components {
-    interface AppHome {
-    }
-    interface AppProfile {
-        "match": MatchResults;
+    interface AppNav {
+        "items": NavItem[];
     }
     interface AppRoot {
     }
+    interface HomeView {
+    }
+    interface MoviesView {
+    }
+    interface TvshowsView {
+    }
 }
 declare global {
-    interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
+    interface HTMLAppNavElement extends Components.AppNav, HTMLStencilElement {
     }
-    var HTMLAppHomeElement: {
-        prototype: HTMLAppHomeElement;
-        new (): HTMLAppHomeElement;
-    };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
-    }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
+    var HTMLAppNavElement: {
+        prototype: HTMLAppNavElement;
+        new (): HTMLAppNavElement;
     };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
@@ -34,33 +32,61 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLHomeViewElement extends Components.HomeView, HTMLStencilElement {
+    }
+    var HTMLHomeViewElement: {
+        prototype: HTMLHomeViewElement;
+        new (): HTMLHomeViewElement;
+    };
+    interface HTMLMoviesViewElement extends Components.MoviesView, HTMLStencilElement {
+    }
+    var HTMLMoviesViewElement: {
+        prototype: HTMLMoviesViewElement;
+        new (): HTMLMoviesViewElement;
+    };
+    interface HTMLTvshowsViewElement extends Components.TvshowsView, HTMLStencilElement {
+    }
+    var HTMLTvshowsViewElement: {
+        prototype: HTMLTvshowsViewElement;
+        new (): HTMLTvshowsViewElement;
+    };
     interface HTMLElementTagNameMap {
-        "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
+        "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
+        "home-view": HTMLHomeViewElement;
+        "movies-view": HTMLMoviesViewElement;
+        "tvshows-view": HTMLTvshowsViewElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppHome {
-    }
-    interface AppProfile {
-        "match"?: MatchResults;
+    interface AppNav {
+        "items"?: NavItem[];
     }
     interface AppRoot {
     }
+    interface HomeView {
+    }
+    interface MoviesView {
+    }
+    interface TvshowsView {
+    }
     interface IntrinsicElements {
-        "app-home": AppHome;
-        "app-profile": AppProfile;
+        "app-nav": AppNav;
         "app-root": AppRoot;
+        "home-view": HomeView;
+        "movies-view": MoviesView;
+        "tvshows-view": TvshowsView;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+            "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "home-view": LocalJSX.HomeView & JSXBase.HTMLAttributes<HTMLHomeViewElement>;
+            "movies-view": LocalJSX.MoviesView & JSXBase.HTMLAttributes<HTMLMoviesViewElement>;
+            "tvshows-view": LocalJSX.TvshowsView & JSXBase.HTMLAttributes<HTMLTvshowsViewElement>;
         }
     }
 }

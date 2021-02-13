@@ -2,7 +2,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
 	tag: 'app-root',
-	styleUrl: 'app-root.css',
+	styleUrl: 'app-root.scss',
 	shadow: true
 })
 export class AppRoot {
@@ -10,14 +10,32 @@ export class AppRoot {
 		return (
 			<div>
 				<header>
-					<h1>Stencil App Starter</h1>
+					<nav>
+						<app-nav
+							items={[
+								{
+									label: 'Home',
+									to: '/'
+								},
+								{
+									label: 'Movies',
+									to: '/movies'
+								},
+								{
+									label: 'TV Shows',
+									to: '/tv-shows'
+								}
+							]}
+						></app-nav>
+					</nav>
 				</header>
 
 				<main>
 					<stencil-router>
 						<stencil-route-switch scrollTopOffset={0}>
-							<stencil-route url="/" component="app-home" exact={true} />
-							<stencil-route url="/profile/:name" component="app-profile" />
+							<stencil-route url="/" component="home-view" exact={true} />
+							<stencil-route url="/movies" component="movies-view" exact={true} />
+							<stencil-route url="/tv-shows" component="tvshows-view" exact={true} />
 						</stencil-route-switch>
 					</stencil-router>
 				</main>
