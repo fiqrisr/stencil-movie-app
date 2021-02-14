@@ -27,7 +27,7 @@ export class AppRoot {
 									},
 									{
 										label: 'TV Shows',
-										to: '/tv-shows'
+										to: '/tv'
 									}
 								]}
 							></app-nav>

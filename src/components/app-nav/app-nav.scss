@@ -9,9 +9,37 @@
 		padding: 0;
 	}
 
-	a {
-		display: block;
+	li {
 		padding: 15px;
+	}
+
+	a {
+		color: $color-purple-tinged;
+		display: block;
+		padding: 6px 0;
+		position: relative;
 		text-decoration: none;
+
+		&::before,
+		&::after {
+			transition: all 0.3s;
+		}
+
+		&::after {
+			background: $color-pure-purple;
+			bottom: 0;
+			color: transparent;
+			content: '.';
+			height: 3px;
+			left: 0;
+			margin: auto;
+			position: absolute;
+			right: 0;
+			width: 0%;
+		}
+
+		&:hover::after {
+			width: 100%;
+		}
 	}
 }

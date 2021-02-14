@@ -12,7 +12,7 @@ export const routes: Route[] = [
 		exact: true
 	},
 	{
-		url: '/tv-shows',
+		url: '/tv',
 		component: 'tvshows-view',
 		exact: true
 	}
