@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import dotEnvPlugin from 'rollup-plugin-dotenv';
 
 // https://stenciljs.com/docs/config
 
@@ -18,6 +19,7 @@ export const config: Config = {
 	plugins: [
 		sass({
 			injectGlobalPaths: ['src/global/inject/variables.scss', 'src/global/inject/mixins.scss']
-		})
+		}),
+		dotEnvPlugin()
 	]
 };
