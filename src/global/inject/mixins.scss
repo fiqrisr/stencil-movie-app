@@ -1,0 +1,28 @@
+$tablet-portrait-min-width: 600px;
+$tablet-landscape-min-width: 900px;
+$desktop-small-min-width: 1200px;
+$desktop-large-min-width: 1800px;
+
+@mixin tab-portrait {
+	@media (min-width: $tablet-portrait-min-width) {
+		@content;
+	}
+}
+
+@mixin tab-landscape {
+	@media (min-width: $tablet-landscape-min-width) {
+		@content;
+	}
+}
+
+@mixin desktop-small {
+	@media (min-width: $desktop-small-min-width) {
+		@content;
+	}
+}
+
+@mixin desktop-large {
+	@media (min-width: $desktop-large-min-width) {
+		@content;
+	}
+}

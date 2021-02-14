@@ -1,5 +1,17 @@
 .container {
 	margin: 0 auto;
-	max-width: 960px;
+	padding: 0 20px;
 	position: relative;
+
+	@include tab-portrait {
+		width: 750px;
+	}
+
+	@include tab-landscape {
+		width: 970px;
+	}
+
+	@include desktop-small {
+		width: 1170px;
+	}
 }
