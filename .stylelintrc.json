@@ -6,6 +6,7 @@
 		"number-leading-zero": null,
 		"order/order": ["custom-properties", "declarations"],
 		"order/properties-order": ["width", "height"],
-		"max-nesting-depth": null
+		"max-nesting-depth": null,
+		"selector-no-qualifying-type": null
 	}
 }

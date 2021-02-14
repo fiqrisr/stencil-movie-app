@@ -1,0 +1,14 @@
+.app-header {
+	align-items: center;
+	box-shadow: $header-shadow;
+	display: flex;
+	height: 65px;
+	z-index: 99;
+
+	.container {
+		display: inline-grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		justify-items: center;
+		min-width: 90%;
+	}
+}

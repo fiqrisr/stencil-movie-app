@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { NavItem, Route } from "@/interfaces";
 export namespace Components {
+    interface AppHeader {
+    }
     interface AppNav {
         "items": NavItem[];
     }
@@ -23,6 +25,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAppHeaderElement extends Components.AppHeader, HTMLStencilElement {
+    }
+    var HTMLAppHeaderElement: {
+        prototype: HTMLAppHeaderElement;
+        new (): HTMLAppHeaderElement;
+    };
     interface HTMLAppNavElement extends Components.AppNav, HTMLStencilElement {
     }
     var HTMLAppNavElement: {
@@ -60,6 +68,7 @@ declare global {
         new (): HTMLTvshowsViewElement;
     };
     interface HTMLElementTagNameMap {
+        "app-header": HTMLAppHeaderElement;
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
         "app-router": HTMLAppRouterElement;
@@ -69,6 +78,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AppHeader {
+    }
     interface AppNav {
         "items"?: NavItem[];
     }
@@ -84,6 +95,7 @@ declare namespace LocalJSX {
     interface TvshowsView {
     }
     interface IntrinsicElements {
+        "app-header": AppHeader;
         "app-nav": AppNav;
         "app-root": AppRoot;
         "app-router": AppRouter;
@@ -96,6 +108,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-header": LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "app-router": LocalJSX.AppRouter & JSXBase.HTMLAttributes<HTMLAppRouterElement>;

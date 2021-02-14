@@ -9,7 +9,7 @@ export class AppRouter {
 
 	render() {
 		return (
-			<stencil-router>
+			<stencil-router titleSuffix=" - Moviio">
 				<stencil-route-switch scrollTopOffset={0}>
 					{this.routes.map(route => (
 						<stencil-route url={route.url} component={route.component} exact={route.exact} />
