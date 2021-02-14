@@ -17,6 +17,8 @@ export namespace Components {
     interface AppRouter {
         "routes": Route[];
     }
+    interface AppSearch {
+    }
     interface HomeView {
     }
     interface MoviesView {
@@ -49,6 +51,12 @@ declare global {
         prototype: HTMLAppRouterElement;
         new (): HTMLAppRouterElement;
     };
+    interface HTMLAppSearchElement extends Components.AppSearch, HTMLStencilElement {
+    }
+    var HTMLAppSearchElement: {
+        prototype: HTMLAppSearchElement;
+        new (): HTMLAppSearchElement;
+    };
     interface HTMLHomeViewElement extends Components.HomeView, HTMLStencilElement {
     }
     var HTMLHomeViewElement: {
@@ -72,6 +80,7 @@ declare global {
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
         "app-router": HTMLAppRouterElement;
+        "app-search": HTMLAppSearchElement;
         "home-view": HTMLHomeViewElement;
         "movies-view": HTMLMoviesViewElement;
         "tvshows-view": HTMLTvshowsViewElement;
@@ -88,6 +97,8 @@ declare namespace LocalJSX {
     interface AppRouter {
         "routes"?: Route[];
     }
+    interface AppSearch {
+    }
     interface HomeView {
     }
     interface MoviesView {
@@ -99,6 +110,7 @@ declare namespace LocalJSX {
         "app-nav": AppNav;
         "app-root": AppRoot;
         "app-router": AppRouter;
+        "app-search": AppSearch;
         "home-view": HomeView;
         "movies-view": MoviesView;
         "tvshows-view": TvshowsView;
@@ -112,6 +124,7 @@ declare module "@stencil/core" {
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "app-router": LocalJSX.AppRouter & JSXBase.HTMLAttributes<HTMLAppRouterElement>;
+            "app-search": LocalJSX.AppSearch & JSXBase.HTMLAttributes<HTMLAppSearchElement>;
             "home-view": LocalJSX.HomeView & JSXBase.HTMLAttributes<HTMLHomeViewElement>;
             "movies-view": LocalJSX.MoviesView & JSXBase.HTMLAttributes<HTMLMoviesViewElement>;
             "tvshows-view": LocalJSX.TvshowsView & JSXBase.HTMLAttributes<HTMLTvshowsViewElement>;

@@ -32,6 +32,7 @@ export class AppRoot {
 								]}
 							></app-nav>
 						</nav>
+						<app-search slot="right" />
 					</app-header>
 				</header>
 

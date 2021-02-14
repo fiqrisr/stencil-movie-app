@@ -1,0 +1,15 @@
+.app-search {
+	background-color: #eee;
+	border: 0;
+	border: 2px transparent solid;
+	border-radius: 20px;
+	color: $color-woodsmoke;
+	min-width: 230px;
+	padding: 10px 16px;
+	transition: border 0.4s;
+
+	&:focus {
+		border-color: $color-pure-purple;
+		outline: none;
+	}
+}
