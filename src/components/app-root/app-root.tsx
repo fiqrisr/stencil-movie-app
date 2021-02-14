@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { routes } from '@/router';
 
 @Component({
 	tag: 'app-root',
@@ -31,13 +32,7 @@ export class AppRoot {
 				</header>
 
 				<main>
-					<stencil-router>
-						<stencil-route-switch scrollTopOffset={0}>
-							<stencil-route url="/" component="home-view" exact={true} />
-							<stencil-route url="/movies" component="movies-view" exact={true} />
-							<stencil-route url="/tv-shows" component="tvshows-view" exact={true} />
-						</stencil-route-switch>
-					</stencil-router>
+					<app-router routes={routes}></app-router>
 				</main>
 			</div>
 		);

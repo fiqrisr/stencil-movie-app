@@ -7,6 +7,7 @@ import { NavItem } from '@/interfaces';
 })
 export class AppNav {
 	@Prop() items: NavItem[];
+
 	render() {
 		return (
 			<div class="app-nav">

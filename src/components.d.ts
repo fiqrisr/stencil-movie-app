@@ -5,12 +5,15 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { NavItem } from "@/interfaces";
+import { NavItem, Route } from "@/interfaces";
 export namespace Components {
     interface AppNav {
         "items": NavItem[];
     }
     interface AppRoot {
+    }
+    interface AppRouter {
+        "routes": Route[];
     }
     interface HomeView {
     }
@@ -31,6 +34,12 @@ declare global {
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
+    };
+    interface HTMLAppRouterElement extends Components.AppRouter, HTMLStencilElement {
+    }
+    var HTMLAppRouterElement: {
+        prototype: HTMLAppRouterElement;
+        new (): HTMLAppRouterElement;
     };
     interface HTMLHomeViewElement extends Components.HomeView, HTMLStencilElement {
     }
@@ -53,6 +62,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
+        "app-router": HTMLAppRouterElement;
         "home-view": HTMLHomeViewElement;
         "movies-view": HTMLMoviesViewElement;
         "tvshows-view": HTMLTvshowsViewElement;
@@ -64,6 +74,9 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface AppRouter {
+        "routes"?: Route[];
+    }
     interface HomeView {
     }
     interface MoviesView {
@@ -73,6 +86,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "app-nav": AppNav;
         "app-root": AppRoot;
+        "app-router": AppRouter;
         "home-view": HomeView;
         "movies-view": MoviesView;
         "tvshows-view": TvshowsView;
@@ -84,6 +98,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "app-router": LocalJSX.AppRouter & JSXBase.HTMLAttributes<HTMLAppRouterElement>;
             "home-view": LocalJSX.HomeView & JSXBase.HTMLAttributes<HTMLHomeViewElement>;
             "movies-view": LocalJSX.MoviesView & JSXBase.HTMLAttributes<HTMLMoviesViewElement>;
             "tvshows-view": LocalJSX.TvshowsView & JSXBase.HTMLAttributes<HTMLTvshowsViewElement>;
