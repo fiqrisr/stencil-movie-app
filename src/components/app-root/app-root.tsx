@@ -1,7 +1,8 @@
 import { Component, h } from '@stencil/core';
-import { routes } from '@/router';
 import { store } from '@stencil/redux';
-import rootStore from '@/store';
+import { routes } from '@/router';
+import { rootStore } from '@/store';
+import appStore from '@/store';
 
 @Component({
 	tag: 'app-root',
@@ -10,6 +11,7 @@ import rootStore from '@/store';
 export class AppRoot {
 	componentWillLoad() {
 		store.setStore(rootStore);
+		console.log(appStore.getStore());
 	}
 
 	render() {
