@@ -1,6 +1,8 @@
 @charset 'utf-8';
 
+@import 'breakpoint-slicer';
+
 @import 'styles/base';
 @import 'styles/fonts';
-@import 'styles/layout';
+@import 'styles/helpers';
 @import 'styles/typography';

@@ -1,0 +1,21 @@
+.container {
+	margin: 0 auto;
+	padding: 0 20px;
+	position: relative;
+
+	@include to(s) {
+		width: 570px;
+	}
+
+	@include at(m) {
+		width: 750px;
+	}
+
+	@include between(l, xl) {
+		width: 960px;
+	}
+
+	@include from(xxl) {
+		width: 1170px;
+	}
+}
